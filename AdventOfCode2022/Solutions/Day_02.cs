@@ -18,11 +18,12 @@ namespace AdventOfCode2022.Solutions
             // var input = InputData.ReadTestInput("Day_02.txt");
             var input = InputData.ReadInput("Day_02.txt");
 
-            Part1(input);
-            Part2(input);
+            Console.WriteLine("=== Day 02 ===");
+            Console.WriteLine($"Part 1: {Part1(input)}");
+            Console.WriteLine($"Part 2: {Part2(input)}");
         }
 
-        private static void Part1(IEnumerable<string> input)
+        private static int Part1(IEnumerable<string> input)
         {
             // rock = 1p, paper = 2p, scissors = 3p
             // win = 6p, draw = 3p, lose = 0p
@@ -47,10 +48,10 @@ namespace AdventOfCode2022.Solutions
                 }
             }
 
-            Console.WriteLine(totalPoints);
+            return totalPoints;
         }
 
-        private static void Part2(IEnumerable<string> input)
+        private static int Part2(IEnumerable<string> input)
         {
             // rock = 1p, paper = 2p, scissors = 3p
             // win = 6p, draw = 3p, lose = 0p
@@ -76,7 +77,7 @@ namespace AdventOfCode2022.Solutions
                 }
             }
 
-            Console.WriteLine(totalPoints);
+            return totalPoints;
         }
 
         private static int SolveDuel(string enemy, string me)

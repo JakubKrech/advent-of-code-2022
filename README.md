@@ -4,3 +4,4 @@
 
 - **Day 1: [Calorie Counting](AdventOfCode2022/Solutions/Day_01.cs)**
 - **Day 2: [Rock Paper Scissors](AdventOfCode2022/Solutions/Day_02.cs)**
+- **Day 3: [Rucksack Reorganization](AdventOfCode2022/Solutions/Day_03.cs)**

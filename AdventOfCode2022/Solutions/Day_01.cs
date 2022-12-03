@@ -9,11 +9,12 @@ namespace AdventOfCode2022.Solutions
             // var input = InputData.ReadTestInput("Day_01.txt");
             var input = InputData.ReadInput("Day_01.txt");
 
-            Part1(input);
-            Part2(input);
+            Console.WriteLine("=== Day 01 ===");
+            Console.WriteLine($"Part 1: {Part1(input)}");
+            Console.WriteLine($"Part 2: {Part2(input)}");
         }
 
-        private static void Part1(IEnumerable<string> input)
+        private static int Part1(IEnumerable<string> input)
         {
             int currSum = 0;
             int max = 0;
@@ -31,10 +32,10 @@ namespace AdventOfCode2022.Solutions
                 }
             }
 
-            Console.WriteLine(max);
+            return max;
         }
 
-        private static void Part2(IEnumerable<string> input)
+        private static int Part2(IEnumerable<string> input)
         {
             input = input.Append("");
 
@@ -71,7 +72,7 @@ namespace AdventOfCode2022.Solutions
                 }
             }
 
-            Console.WriteLine($"{max1} + {max2} + {max3} = {max1 + max2 + max3}");
+            return max1 + max2 + max3;
         }
     }
 }
