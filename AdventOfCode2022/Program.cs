@@ -9,6 +9,7 @@ namespace AdventOfCode2022
             Day_01.Solve();
             Day_02.Solve();
             Day_03.Solve();
+            Day_04.Solve();
         }
     }
 }

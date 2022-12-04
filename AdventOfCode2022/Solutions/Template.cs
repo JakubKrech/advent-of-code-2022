@@ -6,25 +6,26 @@ namespace AdventOfCode2022.Solutions
     {
         public static void Solve()
         {
-            // var input = InputData.ReadTestInput("Day_00.txt");
-            var input = InputData.ReadInput("Day_00.txt");
+            var input = InputData.ReadTestInput("Day_00.txt");
+            // var input = InputData.ReadInput("Day_00.txt");
 
-            Part1(input);
-            Part2(input);
+            Console.WriteLine("=== Day 00 ===");
+            Console.WriteLine($"Part 1: {Part1(input)}");
+            Console.WriteLine($"Part 2: {Part2(input)}");
         }
 
-        private static void Part1(IEnumerable<string> input)
+        private static int Part1(IEnumerable<string> input)
         {
 
 
-            Console.WriteLine(-1);
+            return -1;
         }
 
-        private static void Part2(IEnumerable<string> input)
+        private static int Part2(IEnumerable<string> input)
         {
 
 
-            Console.WriteLine(-1);
+            return -1;
         }
     }
 }
