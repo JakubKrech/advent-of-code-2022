@@ -6,4 +6,5 @@
 - **Day 2: [Rock Paper Scissors](AdventOfCode2022/Solutions/Day_02.cs)**
 - **Day 3: [Rucksack Reorganization](AdventOfCode2022/Solutions/Day_03.cs)**
 - **Day 4: [Camp Cleanup](AdventOfCode2022/Solutions/Day_04.cs)**
-- **Day 4: [Supply Stacks](AdventOfCode2022/Solutions/Day_05.cs)**
+- **Day 5: [Supply Stacks](AdventOfCode2022/Solutions/Day_05.cs)**
+- **Day 6: [Tuning Trouble](AdventOfCode2022/Solutions/Day_06.cs)**
