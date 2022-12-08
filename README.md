@@ -9,3 +9,4 @@
 - **Day 5: [Supply Stacks](AdventOfCode2022/Solutions/Day_05.cs)**
 - **Day 6: [Tuning Trouble](AdventOfCode2022/Solutions/Day_06.cs)**
 - **Day 7: [No Space Left On Device](AdventOfCode2022/Solutions/Day_07.cs)**
+- **Day 8: [Treetop Tree House](AdventOfCode2022/Solutions/Day_08.cs)**
