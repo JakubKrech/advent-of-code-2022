@@ -6,53 +6,103 @@ namespace AdventOfCode2022.Solutions
     {
         public static void Solve()
         {
-            var input = InputData.ReadTestInput("Day_08.txt");
-            // var input = InputData.ReadInput("Day_08.txt");
+            // var input = InputData.ReadTestInput("Day_08.txt");
+            var input = InputData.ReadInput("Day_08.txt");
+
+            var (part1, part2) = Solution(input);
 
             Console.WriteLine("=== Day 08 ===");
-            Console.WriteLine($"Part 1: {Part1(input)}");
-            Console.WriteLine($"Part 2: {Part2(input)}");
+            Console.WriteLine($"Part 1: {part1}");
+            Console.WriteLine($"Part 2: {part2}");
         }
 
-        private static int Part1(IEnumerable<string> input)
+        private static (int, int) Solution(IEnumerable<string> input)
         {
-            List<List<int>> list2d = new List<List<int>>();
-
             int lineAmmount = input.Count();
             int lineLength = input.First().Length;
 
-            for(int i = 0; i < lineAmmount; i++)
-            {
-                list2d.Add(new List<int>());
-            }
+            int[,] trees2dList = new int[lineAmmount, lineLength];
+            int totalVisibleTrees = lineAmmount * 2 + lineLength * 2 - 4; // outline minus doubled corners
+            int maxScenicScore = 0;
 
-            for(int i = 0; i < input.Count(); i++)
+            for (int i = 0; i < lineAmmount; i++)
             {
-                for (int j = 0; j < input.First<string>().Length; j++)
+                for (int j = 0; j < lineLength; j++)
                 {
-                    string line = input.ElementAt(i);
-                    char x = line[j];
-                    list2d[i].Add(int.Parse(x.ToString()));
+                    trees2dList[i, j] =int.Parse(input.ElementAt(i)[j].ToString());
                 }
             }
 
-            foreach(var line in list2d)
+            for (int i = 1; i < lineAmmount - 1; i++)
             {
-                foreach(var ch in line)
+                for (int j = 1; j < lineLength - 1; j++)
                 {
-                    Console.Write(ch);
+                    int current = trees2dList[i, j];
+                    List<bool> hidden = new() { false, false, false, false };
+                    List<int> scenicScores = new() { 0, 0, 0, 0 };
+
+                    // check left side
+                    for (int x = j - 1; x >= 0; x--)
+                    {
+                        scenicScores[(int)Directions.Left] += 1;
+                        if (current <= trees2dList[i, x])
+                        {
+                            hidden[(int)Directions.Left] = true;
+                            break;
+                        }
+                    }
+
+                    // check right side
+                    for (int x = j + 1; x < lineLength; x++)
+                    {
+                        scenicScores[(int)Directions.Right] += 1;
+                        if (current <= trees2dList[i, x])
+                        {
+                            hidden[(int)Directions.Right] = true;
+                            break;
+                        }
+                    }
+
+                    // check top side
+                    for (int x = i - 1; x >= 0; x--)
+                    {
+                        scenicScores[(int)Directions.Top] += 1;
+                        if (current <= trees2dList[x, j])
+                        {
+                            hidden[(int)Directions.Top] = true;
+                            break;
+                        }
+                    }
+
+                    // check bottom side
+                    for (int x = i + 1; x < lineAmmount; x++)
+                    {
+                        scenicScores[(int)Directions.Bottom] += 1;
+                        if (current <= trees2dList[x, j])
+                        {
+                            hidden[(int)Directions.Bottom] = true;
+                            break;
+                        }
+                    }
+
+                    if (hidden.Contains(false))
+                    {
+                        totalVisibleTrees += 1;
+                    }
+
+                    maxScenicScore = int.Max(maxScenicScore, scenicScores.Aggregate((x, y) => x * y));
                 }
-                Console.WriteLine();
             }
 
-            return -1;
+            return (totalVisibleTrees, maxScenicScore);
         }
 
-        private static int Part2(IEnumerable<string> input)
+        enum Directions
         {
-
-
-            return -1;
+            Left,
+            Right,
+            Top,
+            Bottom
         }
     }
 }
