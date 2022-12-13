@@ -13,3 +13,4 @@
 - **Day 9: [Rope Bridge](AdventOfCode2022/Solutions/Day_09.cs)**
 - **Day 10: [Cathode-Ray Tube](AdventOfCode2022/Solutions/Day_10.cs)**
 - **Day 11: [Monkey in the Middle](AdventOfCode2022/Solutions/Day_11.cs)**
+- **Day 12: [Hill Climbing Algorithm](AdventOfCode2022/Solutions/Day_12.cs)**
