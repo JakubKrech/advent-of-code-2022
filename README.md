@@ -14,3 +14,4 @@
 - **Day 10: [Cathode-Ray Tube](AdventOfCode2022/Solutions/Day_10.cs)**
 - **Day 11: [Monkey in the Middle](AdventOfCode2022/Solutions/Day_11.cs)**
 - **Day 12: [Hill Climbing Algorithm](AdventOfCode2022/Solutions/Day_12.cs)**
+- **Day 13: [Distress Signal](AdventOfCode2022/Solutions/Day_13.cs)**
