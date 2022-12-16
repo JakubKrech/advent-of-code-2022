@@ -80,6 +80,7 @@ namespace AdventOfCode2022.Solutions
                         break;
                 }
             }
+            Console.WriteLine();
         }
     }
 }

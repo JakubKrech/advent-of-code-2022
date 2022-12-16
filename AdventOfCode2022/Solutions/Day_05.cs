@@ -9,13 +9,11 @@ namespace AdventOfCode2022.Solutions
     {
         public static void Solve()
         {
-            // var input = InputData.ReadTestInput("Day_05.txt");
-            var input = InputData.ReadInput("Day_05.txt");
-
-            Console.WriteLine("=== Day 05 ===");
-            Console.WriteLine($"Part 1: {Solution(input, moveMultipleAtOnce: false)}");
-            Console.WriteLine($"Part 2: {Solution(input, moveMultipleAtOnce: true)}");
+            AoCTools<string>.RunMeasureTimeAndLog(Part1, Part2, "05", testInput: false);
         }
+
+        public static string Part1(IEnumerable<string> input) => Solution(input, moveMultipleAtOnce: false);
+        public static string Part2(IEnumerable<string> input) => Solution(input, moveMultipleAtOnce: true);
 
         private static string Solution(IEnumerable<string> input, bool moveMultipleAtOnce)
         {

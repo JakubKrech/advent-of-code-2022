@@ -6,13 +6,10 @@ namespace AdventOfCode2022.Solutions
     {
         public static void Solve()
         {
-            // var input = InputData.ReadTestInput("Day_12.txt");
-            var input = InputData.ReadInput("Day_12.txt");
-
-            Console.WriteLine("=== Day 12 ===");
-            Console.WriteLine($"Part 1: {Part1(input)}");
-            Console.WriteLine($"Part 2: {Part2(input)}");
+            AoCTools.RunMeasureTimeAndLog(Part1, Part2, "12", testInput: false);
         }
+
+        public static int Part1(IEnumerable<string> input) => Part1(input, -1, -1);
 
         private static int Part1(IEnumerable<string> input, int start_x = -1, int start_y = -1)
         {

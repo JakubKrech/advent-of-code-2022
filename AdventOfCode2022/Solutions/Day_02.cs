@@ -1,5 +1,4 @@
 ﻿using AdventOfCode2022.Tools;
-using System;
 
 namespace AdventOfCode2022.Solutions
 {
@@ -9,18 +8,13 @@ namespace AdventOfCode2022.Solutions
         const int paperShown = 2;
         const int scissorsShown = 3;
 
-        const int win = 6;
-        const int draw = 3;
-        const int lose = 0;
+        const int winPoints = 6;
+        const int drawPoints = 3;
+        const int losePoints = 0;
 
         public static void Solve()
         {
-            // var input = InputData.ReadTestInput("Day_02.txt");
-            var input = InputData.ReadInput("Day_02.txt");
-
-            Console.WriteLine("=== Day 02 ===");
-            Console.WriteLine($"Part 1: {Part1(input)}");
-            Console.WriteLine($"Part 2: {Part2(input)}");
+            AoCTools.RunMeasureTimeAndLog(Part1, Part2, "02", testInput: false);
         }
 
         private static int Part1(IEnumerable<string> input)
@@ -85,11 +79,11 @@ namespace AdventOfCode2022.Solutions
             switch (enemy)
             {
                 case "A": // rock
-                    return me == "X" ? 3 : me == "Y" ? 6 : 0;
+                    return me == "X" ? drawPoints : me == "Y" ? winPoints : losePoints;
                 case "B": // paper
-                    return me == "Y" ? 3 : me == "Z" ? 6 : 0;
+                    return me == "Y" ? drawPoints : me == "Z" ? winPoints : losePoints;
                 default:  // case "C": // scissors
-                    return me == "Z" ? 3 : me == "X" ? 6 : 0;
+                    return me == "Z" ? drawPoints : me == "X" ? winPoints : losePoints;
             }
         }
 

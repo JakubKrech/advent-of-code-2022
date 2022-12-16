@@ -6,13 +6,11 @@ namespace AdventOfCode2022.Solutions
     {
         public static void Solve()
         {
-            // var input = InputData.ReadTestInput("Day_09.txt");
-            var input = InputData.ReadInput("Day_09.txt");
-
-            Console.WriteLine("=== Day 09 ===");
-            Console.WriteLine($"Part 1: {Solution(input, 2)}");
-            Console.WriteLine($"Part 2: {Solution(input, 10)}");
+            AoCTools.RunMeasureTimeAndLog(Part1, Part2, "09", testInput: false);
         }
+
+        public static int Part1(IEnumerable<string> input) => Solution(input, 2);
+        public static int Part2(IEnumerable<string> input) => Solution(input, 10);
 
         private static int Solution(IEnumerable<string> input, int ammountOfRopeKnots)
         {

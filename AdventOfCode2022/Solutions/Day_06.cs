@@ -6,13 +6,11 @@ namespace AdventOfCode2022.Solutions
     {
         public static void Solve()
         {
-            // var input = InputData.ReadTestInput("Day_06.txt");
-            var input = InputData.ReadInput("Day_06.txt");
-
-            Console.WriteLine("=== Day 06 ===");
-            Console.WriteLine($"Part 1: {FindEncodedPackets(input, 4)}");
-            Console.WriteLine($"Part 2: {FindEncodedPackets(input, 14)}");
+            AoCTools<string>.RunMeasureTimeAndLog(Part1, Part2, "06", testInput: false);
         }
+
+        public static string Part1(IEnumerable<string> input) => FindEncodedPackets(input, 4);
+        public static string Part2(IEnumerable<string> input) => FindEncodedPackets(input, 14);
 
         private static int FindEncodedPacket(string input, int lengthOfPacket)
         {
