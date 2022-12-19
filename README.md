@@ -20,3 +20,4 @@
 - **Day 16: Proboscidea Volcanium**
 - **Day 17: Pyroclastic Flow**
 - **Day 18: [Boiling Boulders](AdventOfCode2022/Solutions/Day_18.cs)**
+- **Day 19: Not Enough Minerals**
