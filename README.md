@@ -21,3 +21,5 @@
 - **Day 17: Pyroclastic Flow**
 - **Day 18: [Boiling Boulders](AdventOfCode2022/Solutions/Day_18.cs)**
 - **Day 19: Not Enough Minerals**
+- **Day 20: Grove Positioning System**
+- **Day 21: [Monkey Math](AdventOfCode2022/Solutions/Day_21.cs)**
