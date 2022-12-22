@@ -19,10 +19,11 @@ namespace AdventOfCode2022
             //Day_11.Solve();
             //Day_12.Solve();
             //Day_13.Solve();
+            Day_14.Solve();
 
             //Day_18.Solve();
 
-            Day_21.Solve();
+            //Day_21.Solve();
         }
     }
 }
