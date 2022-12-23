@@ -16,7 +16,7 @@
 - **Day 12: [Hill Climbing Algorithm](AdventOfCode2022/Solutions/Day_12.cs)**
 - **Day 13: [Distress Signal](AdventOfCode2022/Solutions/Day_13.cs)**
 - **Day 14: [Regolith Reservoir](AdventOfCode2022/Solutions/Day_14.cs)**
-- **Day 15: Beacon Exclusion Zone**
+- **Day 15: [Beacon Exclusion Zone](AdventOfCode2022/Solutions/Day_15.cs)**
 - **Day 16: Proboscidea Volcanium**
 - **Day 17: Pyroclastic Flow**
 - **Day 18: [Boiling Boulders](AdventOfCode2022/Solutions/Day_18.cs)**

@@ -13,7 +13,7 @@ namespace AdventOfCode2022.Solutions
 
             Console.WriteLine("=== Day 08 ===");
             Console.WriteLine($"Part 1: {part1}");
-            Console.WriteLine($"Part 2: {part2}");
+            Console.WriteLine($"Part 2: {part2}\n");
         }
 
         private static (int, int) Solution(IEnumerable<string> input)
