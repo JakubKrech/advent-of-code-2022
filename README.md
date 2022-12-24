@@ -23,3 +23,6 @@
 - **Day 19: Not Enough Minerals**
 - **Day 20: Grove Positioning System**
 - **Day 21: [Monkey Math](AdventOfCode2022/Solutions/Day_21.cs)**
+- **Day 22: Monkey Map**
+- **Day 23: Unstable Diffusion**
+- **Day 24: [Blizzard Basin](AdventOfCode2022/Solutions/Day_24.cs)**
