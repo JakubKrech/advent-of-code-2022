@@ -1,6 +1,9 @@
 ﻿using AdventOfCode2022.Tools;
 using System.Numerics;
 
+// 824 too high
+// 500 too high
+
 namespace AdventOfCode2022.Solutions
 {
     internal static class Day_24
@@ -14,7 +17,7 @@ namespace AdventOfCode2022.Solutions
         {
             int height = input.Count();
             int width = input.ElementAt(0).Length;
-            int ammountOfTurns = 1000;
+            int ammountOfTurns = 200;
 
             int[,,] tab = new int[height - 2, width - 2, ammountOfTurns + 1];
             List<Blizzard> blizzards = new();
@@ -70,12 +73,11 @@ namespace AdventOfCode2022.Solutions
 
             Explore(tab, possiblePaths, -1, 0, 0);
 
-            return possiblePaths.Min();
+            return possiblePaths.Count > 0 ? possiblePaths.Min() : -1;
         }
 
         private static int Part2(IEnumerable<string> input)
         {
-
 
             return -1;
         }
@@ -86,13 +88,15 @@ namespace AdventOfCode2022.Solutions
 
             int minimumPath = possiblePaths.Count == 0 ? int.MaxValue : possiblePaths.Min();
 
-            if (turn == Math.Min(999, minimumPath))
-                return;
-
             int height = tab.GetLength(0);
             int width = tab.GetLength(1);
 
-            if(x == height - 1 && y == width - 1)
+            int distanceFromExit = ((height - 1) - x) + (width - 1) - y; 
+
+            if (turn + distanceFromExit >= Math.Min(200, minimumPath - 1))
+                return;
+
+            if (x == height - 1 && y == width - 1)
             {
                 Console.WriteLine($"FOUND {turn + 1}");
                 possiblePaths.Add(turn + 1);
@@ -101,11 +105,11 @@ namespace AdventOfCode2022.Solutions
 
             if(x != -1)
             {
-                // Wait
-                if (tab[x, y, turn + 1] == 0)
+                // Check right
+                if (y + 1 < width && tab[x, y + 1, turn + 1] == 0)
                 {
-                    //Console.WriteLine("Wait");
-                    Explore(tab, possiblePaths, x, y, turn + 1);
+                    //Console.WriteLine("right");
+                    Explore(tab, possiblePaths, x, y + 1, turn + 1);
                 }
 
                 // Check left
@@ -114,12 +118,14 @@ namespace AdventOfCode2022.Solutions
                     //Console.WriteLine("left");
                     Explore(tab, possiblePaths, x, y - 1, turn + 1);
                 }
-                // Check right
-                if (y + 1 < width && tab[x, y + 1, turn + 1] == 0)
+
+                // Check down
+                if (x + 1 < height && tab[x + 1, y, turn + 1] == 0)
                 {
-                    //Console.WriteLine("right");
-                    Explore(tab, possiblePaths, x, y + 1, turn + 1);
+                    //Console.WriteLine("down");
+                    Explore(tab, possiblePaths, x + 1, y, turn + 1);
                 }
+
                 // Check up
                 if (x - 1 >= 0 && tab[x - 1, y, turn + 1] == 0)
                 {
@@ -127,11 +133,11 @@ namespace AdventOfCode2022.Solutions
                     Explore(tab, possiblePaths, x - 1, y, turn + 1);
                 }
 
-                // Check down
-                if (x + 1 < height && tab[x + 1, y, turn + 1] == 0)
+                // Wait
+                if (tab[x, y, turn + 1] == 0)
                 {
-                    //Console.WriteLine("down");
-                    Explore(tab, possiblePaths, x + 1, y, turn + 1);
+                    //Console.WriteLine("Wait");
+                    Explore(tab, possiblePaths, x, y, turn + 1);
                 }
             }
             else

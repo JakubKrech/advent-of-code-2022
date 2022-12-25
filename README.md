@@ -26,3 +26,4 @@
 - **Day 22: Monkey Map**
 - **Day 23: Unstable Diffusion**
 - **Day 24: [Blizzard Basin](AdventOfCode2022/Solutions/Day_24.cs)**
+- **Day 25: Full of Hot Air**
